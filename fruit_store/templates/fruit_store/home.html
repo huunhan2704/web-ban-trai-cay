@@ -1,0 +1,40 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'fruit_store/css/style.css' %}">
+<header>
+    <img src="{% static 'fruit_store/images/logo.png' %}" alt="Logo">
+    <nav>
+        <a href="/">Trang chủ</a>
+        <a href="/gioi-thieu">Giới thiệu</a>
+        <a href="/san-pham">Sản phẩm</a>
+        <a href="/tin-tuc">Tin tức</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <img src="{{ MEDIA_URL }}/banner_tet.jpg" style="width:100%" alt="Tết Bính Ngọ">
+</section>
+
+<section class="products">
+    {% for category in categories %}
+        <h2 class="category-title" style="background: #f4f4f4; padding: 10px; margin-top: 20px;">
+            {{ category.name }}
+        </h2>
+        
+        <div class="product-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
+            {% for p in products %}
+                {% if p.category == category %} <div class="product-item" style="border: 1px solid #ddd; padding: 10px; width: 200px;">
+                    <img src="{{ p.image.url }}" alt="{{ p.name }}" style="width: 100%;">
+                    <h3>{{ p.name }}</h3>
+                    <p>Giá: {{ p.price }}đ / {{ p.unit }}</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+</section>
+
+<div class="social-buttons" style="position: fixed; right: 10px; bottom: 100px;">
+    <a href="#"><img src="/static/images/zalo-icon.png" width="40"></a>
+    <a href="#"><img src="/static/images/messenger-icon.png" width="40"></a>
+</div>
