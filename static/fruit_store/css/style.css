@@ -61,3 +61,97 @@ nav a {
     text-transform: uppercase;
     color: #006400;
 }
+.category-title {
+    text-align: center;         /* Căn giữa chữ */
+    text-transform: uppercase;  /* Viết hoa toàn bộ cho chuyên nghiệp */
+    color: #006400;             /* Màu xanh lá đậm giống logo */
+    margin-top: 50px;           /* Khoảng cách với phần trên */
+    margin-bottom: 30px;        /* Khoảng cách với danh sách sản phẩm */
+    font-size: 28px;            /* Kích thước chữ to rõ ràng */
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Thêm một dấu gạch ngang nhỏ dưới tên danh mục cho đẹp */
+.category-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #ff0000; /* Màu đỏ làm điểm nhấn */
+}
+.banner img, .sub-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Bo góc nhẹ cho hiện đại */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+    margin-bottom: 20px;
+}
+
+/* Căn giữa tiêu đề danh mục như bạn muốn */
+.category-title {
+    text-align: center;
+    color: #006400;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin: 40px 0 20px 0;
+    font-weight: bold;
+}
+.add-to-cart {
+    background-color: #006400; /* Màu xanh lá đậm */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+}
+.add-to-cart:hover {
+    background-color: #004d00;
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.commitment-item h3 {
+    font-family: 'Dancing Script', cursive;
+    margin: 15px 0;
+    font-size: 22px;
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  100% { transform: translate(1px, 1px) rotate(0deg); }
+}
+
+.social-buttons img {
+  animation: shake 0.8s;
+  animation-iteration-count: infinite;
+}
+.news-item h4 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.news-item h4:hover {
+    color: #006400;
+}
+
+.news-item img {
+    transition: 0.5s;
+}
+
+.news-item:hover img {
+    transform: scale(1.05);
+}

@@ -1,5 +1,6 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'fruit_store/css/style.css' %}">
+
 <header>
     <img src="{% static 'fruit_store/images/logo.png' %}" alt="Logo">
     <nav>
@@ -11,30 +12,198 @@
 </header>
 
 <section class="banner">
-    <img src="{{ MEDIA_URL }}/banner_tet.jpg" style="width:100%" alt="Tết Bính Ngọ">
+    <img src="/media/banner_tet.jpg" style="width:100%" alt="Tết Bính Ngọ">
+    
 </section>
 
 <section class="products">
     {% for category in categories %}
-        <h2 class="category-title" style="background: #f4f4f4; padding: 10px; margin-top: 20px;">
+    <section class="category-section">
+        <h2 class="category-title" style="text-align: center; color: #006400; margin: 40px 0; text-transform: uppercase;">
             {{ category.name }}
         </h2>
         
-        <div class="product-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div class="product-grid">
             {% for p in products %}
-                {% if p.category == category %} <div class="product-item" style="border: 1px solid #ddd; padding: 10px; width: 200px;">
-                    <img src="{{ p.image.url }}" alt="{{ p.name }}" style="width: 100%;">
-                    <h3>{{ p.name }}</h3>
-                    <p>Giá: {{ p.price }}đ / {{ p.unit }}</p>
-                    <button>Thêm vào giỏ</button>
-                </div>
+                {% if p.category == category %}
+                    <div class="product-item" style="position: relative;">
+                        <span class="sale-badge" style="position: absolute; top: 10px; left: 10px; background: red; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 12px; z-index: 10;">
+                            -12%
+                        </span>
+
+                        <img src="{{ p.image.url }}" alt="{{ p.name }}">
+                        <h3>{{ p.name }}</h3>
+                        <p>Giá: {{ p.price }}đ / {{ p.unit }}</p>
+                        <button class="add-to-cart">Thêm vào giỏ</button>
+                    </div>
                 {% endif %}
             {% endfor %}
         </div>
+    </section>
+
+    {% if category.name == "Giỏ Quà" %}
+    <div class="sub-banner" style="margin: 50px 0; width: 100%;">
+        <img src="{% static 'fruit_store/images/banner_gio_qua.jpg' %}" style="width:100%; display: block;" alt="Bộ sưu tập Giỏ Quà">
+    </div>
+    {% elif category.name == "Trái Cây Nhập Khẩu" %}
+    <div class="sub-banner" style="margin: 50px 0; width: 100%;">
+        <img src="{% static 'fruit_store/images/banner_trai_cay.jpg' %}" style="width:100%; display: block;" alt="Trái cây nhập khẩu">
+    </div>
+    {% endif %}
+
     {% endfor %}
+    <section class="intro-section" style="padding: 40px 10%; text-align: center;">
+    <h1 style="color: #006400; font-weight: bold;">MP PREMIUM FRUIT - FRESH FRUIT & ORGANIC FOOD</h1>
+    <div style="text-align: left; line-height: 1.8; margin-top: 20px;">
+        <p>1. Bạn đang cần tìm một địa chỉ uy tín bán trái cây sạch và an toàn?</p>
+        <p>2. Bạn ngại phải ra đường giữa trưa nắng hay trời mưa để lựa chọn những trái cây ngon nhất?</p>
+        <p>3. Bạn phân vân không biết lựa chọn thế nào là đúng để tránh chọn nhầm trái cây bẩn?</p>
+        <h3 style="color: #006400; text-align: center; margin-top: 30px;">=> HÃY ĐỂ MP PREMIUM FRUIT GIẢI QUYẾT TẤT CẢ CÁC VẤN ĐỀ NÀY CHO BẠN</h3>
+    </div>
 </section>
 
-<div class="social-buttons" style="position: fixed; right: 10px; bottom: 100px;">
-    <a href="#"><img src="/static/images/zalo-icon.png" width="40"></a>
-    <a href="#"><img src="/static/images/messenger-icon.png" width="40"></a>
+</section>
+<section class="commitments" style="padding: 50px 5%; background: #fff; text-align: center;">
+    <div class="commitment-grid" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px;">
+        
+        <div class="commitment-item" style="max-width: 250px;">
+            <img src="{% static 'fruit_store/images/quality.png' %}" width="100" alt="Uy tín">
+            <h3 style="color: #006400; font-family: 'Dancing Script', cursive;">Uy Tín Chất Lượng</h3>
+            <p style="font-size: 14px; color: #666;">Thương hiệu mạnh nhờ chữ tín và cũng chính chữ tín làm nên thương hiệu.</p>
+        </div>
+
+        <div class="commitment-item" style="max-width: 250px;">
+            <img src="{% static 'fruit_store/images/safety.png' %}" width="100" alt="An toàn">
+            <h3 style="color: #006400; font-family: 'Dancing Script', cursive;">An Toàn Thực Phẩm</h3>
+            <p style="font-size: 14px; color: #666;">Tất cả sản phẩm đều có nguồn gốc xuất xứ rõ ràng, kiểm dịch đầy đủ.</p>
+        </div>
+
+        <div class="commitment-item" style="max-width: 250px;">
+            <img src="{% static 'fruit_store/images/logo_tron.png' %}" width="150" alt="MP Fruit">
+            <h2 style="color: #006400;">MP PREMIUM FRUIT</h2>
+            <p>Fresh Fruit & Organic Food</p>
+        </div>
+
+        <div class="commitment-item" style="max-width: 250px;">
+            <img src="{% static 'fruit_store/images/price.png' %}" width="100" alt="Giá tốt">
+            <h3 style="color: #006400; font-family: 'Dancing Script', cursive;">Giá Cả Cạnh Tranh</h3>
+            <p style="font-size: 14px; color: #666;">Cam kết mức giá tốt nhất đi kèm chất lượng hàng đầu.</p>
+        </div>
+
+        <div class="commitment-item" style="max-width: 250px;">
+            <img src="{% static 'fruit_store/images/delivery.png' %}" width="100" alt="Giao hàng">
+            <h3 style="color: #006400; font-family: 'Dancing Script', cursive;">Giao Hàng Nhanh</h3>
+            <p style="font-size: 14px; color: #666;">Dịch vụ giao hàng tận nơi nhanh chóng từ năm 2014.</p>
+        </div>
+
+    </div>
+</section>
+<section class="newsletter-container">
+<section class="newsletter" style="background: url('{% static 'fruit_store/images/bg_newsletter.jpg' %}') no-repeat center; background-size: cover; padding: 60px 0; margin-top: 30px;">
+    <div style="background: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 0 auto; padding: 30px; border-radius: 10px; border: 5px solid #006400;">
+        <h2 style="text-align: center; color: #006400;">ĐĂNG KÝ NHẬN TIN</h2>
+        <p style="text-align: center;">Vui lòng nhập thông tin vào form bên dưới để chúng tôi liên hệ với bạn!</p>
+        
+        <form style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+            <input type="text" placeholder="Họ Tên" style="padding: 10px; border: 1px solid #ccc;">
+            <input type="text" placeholder="Điện thoại" style="padding: 10px; border: 1px solid #ccc;">
+            <input type="email" placeholder="Email" style="padding: 10px; border: 1px solid #ccc; grid-column: span 2;">
+            <textarea placeholder="Nội dung" style="padding: 10px; border: 1px solid #ccc; grid-column: span 2; height: 80px;"></textarea>
+            <button type="submit" style="grid-column: span 2; background: #e6211e; color: white; border: none; padding: 12px; font-weight: bold; cursor: pointer;">GỬI</button>
+        </form>
+    </div>
+</section>
+</section>
+
+<div class="news-video-title" style="text-align: center; margin-top: 50px; margin-bottom: 10px;">
+    <h2 style="color: #006400; text-transform: uppercase; font-size: 24px; font-weight: bold;">
+        <span style="color: #ccc;">••</span> TIN TỨC - VIDEO <span style="color: #ccc;">••</span>
+    </h2>
+    <p style="font-size: 14px; color: #333; margin-top: 5px;">
+        LỢI ÍCH CỦA TRÁI CÂY ĐỐI VỚI SỨC KHỎE - QUÁ TRÌNH THU HOẠCH CÁC LOẠI TRÁI CÂY
+    </p>
+</div>
+<section class="news-video-section" style="padding: 50px 5%; max-width: 1200px; margin: 0 auto;">
+    <div class="news-video-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        
+        <div class="news-list">
+            <div class="news-item" style="display: flex; gap: 15px; margin-bottom: 25px;">
+                <img src="{% static 'fruit_store/images/news1.jpg' %}" style="width: 200px; border-radius: 5px;" alt="News">
+                <div>
+                    <span style="background: #006400; color: white; padding: 5px 10px; font-size: 12px;">11 Tháng 11</span>
+                    <h4 style="margin: 10px 0; color: #333;">9 LỢI ÍCH KHÔNG NGỜ CỦA TÁO XANH</h4>
+                    <p style="font-size: 13px; color: #666;">Người tiêu dùng Việt đã quá quen thuộc với các loại Trái Cây Nhập Khẩu...</p>
+                </div>
+            </div>
+
+            <div class="news-item" style="display: flex; gap: 15px; margin-bottom: 25px;">
+                <img src="{% static 'fruit_store/images/news2.jpg' %}" style="width: 200px; border-radius: 5px;" alt="News">
+                <div>
+                    <span style="background: #006400; color: white; padding: 5px 10px; font-size: 12px;">23 Tháng 01</span>
+                    <h4 style="margin: 10px 0; color: #333;">TẠI SAO CHERRY TASMANIA LẠI ĐƯỢC MỆNH DANH NGON NHẤT THẾ GIỚI?</h4>
+                    <p style="font-size: 13px; color: #666;">Cherry Úc Tasmania Premium giòn tan, bóng bẩy, ngọt ngào & đậm đà...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/QUẢ_MÃ_VIDEO_CỦA_BẠN" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen style="border-radius: 10px; border: 5px solid #eee;">
+            </iframe>
+        </div>
+
+    </div>
+</section>
+
+<div class="social-buttons" style="position: fixed; right: 15px; bottom: 80px; display: flex; flex-direction: column; gap: 10px; z-index: 100;">
+    <a href="#"><img src="{% static 'images/zalo-icon.png' %}" width="45"></a>
+    <a href="#"><img src="{% static 'images/messenger-icon.png' %}" width="45"></a>
+</div>
+
+
+<footer class="main-footer" style="background-color: #004d00; color: white; padding: 40px 5%; margin-top: 50px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+        
+        <div class="footer-info">
+            <h2 style="font-size: 24px; margin-bottom: 20px;">NONG DAN TRAI CAY</h2>
+            <p><strong>Địa chỉ:</strong> XXX , Phường XXX , Quận X, TP. Hồ Chí Minh</p>
+            <p><strong>Điện thoại:</strong> <span style="color: #00bcd4;">0XXX XX XX XXX - 0XXX XX XX XXX</span></p>
+            <p><strong>Email:</strong> ABC123@gmail.com</p>
+            <p><strong>MST:</strong> 0XXXXXXXXXX</p>
+            
+            <div class="footer-social" style="display: flex; gap: 10px; margin-top: 20px;">
+                <img src="{% static 'images/insta-icon.png' %}" width="35">
+                <img src="{% static 'images/tiktok-icon.png' %}" width="35">
+                <img src="{% static 'images/zalo-icon.png' %}" width="35">
+                <img src="{% static 'images/fb-icon.png' %}" width="35">
+            </div>
+        </div>
+
+        <div class="footer-policy">
+            <h3 style="border-bottom: 2px solid white; display: inline-block; padding-bottom: 5px;">QUY ĐỊNH - CHÍNH SÁCH</h3>
+            <ul style="list-style: none; padding: 0; margin-top: 20px; line-height: 2;">
+                <li>» HƯỚNG DẪN ĐẶT HÀNG VÀ THANH TOÁN</li>
+                <li>» CHÍNH SÁCH GIAO HÀNG VÀ ĐỔI TRẢ</li>
+                <li>» CHÍNH SÁCH BẢO MẬT THÔNG TIN</li>
+            </ul>
+            <div style="margin-top: 20px;">
+                <img src="{% static 'images/da-thong-bao.png' %}" width="150" alt="Đã thông báo bộ công thương">
+                <br>
+                <img src="{% static 'images/dmca.png' %}" width="100" style="margin-top: 10px;">
+            </div>
+        </div>
+
+        <div class="footer-fanpage">
+            <h3 style="border-bottom: 2px solid white; display: inline-block; padding-bottom: 5px;">FANPAGE - FACEBOOK</h3>
+            <div style="margin-top: 20px; background: white; padding: 10px; border-radius: 5px;">
+                <img src="{% static 'images/fb-preview.png' %}" style="width: 100%;" alt="Fanpage Facebook">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="copyright" style="background: #222; color: #888; text-align: center; padding: 15px 5%; font-size: 13px; display: flex; justify-content: space-between;">
+    <span>© 2020-2026. Toàn bộ bản quyền thuộc NONG DAN TRAI CAY</span>
 </div>
