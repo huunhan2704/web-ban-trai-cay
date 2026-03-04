@@ -1,0 +1,106 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'fruit_store/css/style.css' %}">
+
+<header>
+    <img src="{% static 'fruit_store/images/logo.png' %}" alt="Logo">
+    <nav>
+        <a href="/">Trang chủ</a>
+        <a href="/gioi-thieu">Giới thiệu</a>
+        <a href="{% url 'san_pham' %}">Sản phẩm</a>
+        <a href="/tin-tuc" style="color: #ff0000;">Tin tức</a>
+        <a href="/gio-hang" >Giỏ hàng</a>
+    </nav>
+</header>
+
+<main style="padding: 40px 5%;">
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="color: #006400; text-transform: uppercase;">
+            <span style="color: #ccc;">••</span> TIN TỨC <span style="color: #ccc;">••</span>
+        </h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+        
+        <article class="news-post">
+            <img src="{% static 'fruit_store/images/news1.jpg' %}" style="width: 100%; border-radius: 10px;" alt="Tin tức">
+            <h3 style="margin: 15px 0; font-size: 18px; color: #333; text-align: center;">Những Trái Cây Giàu Vitamin Và Khoáng Chất</h3>
+            <p style="font-size: 14px; color: #666; line-height: 1.6; height: 70px; overflow: hidden;">
+                Trái cây không chỉ là món ăn ngon miệng mà còn là nguồn cung cấp vitamin và khoáng chất dồi dào...
+            </p>
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="#" style="background: #004d00; color: white; padding: 8px 25px; border-radius: 20px; text-decoration: none; font-size: 14px;">Xem thêm</a>
+            </div>
+        </article>
+
+        <article class="news-post">
+            <img src="{% static 'fruit_store/images/news2.jpg' %}" style="width: 100%; border-radius: 10px;" alt="Tin tức">
+            <h3 style="margin: 15px 0; font-size: 18px; color: #333; text-align: center;">Bổ sung ngay 4 loại trái cây này để tăng sức đề kháng</h3>
+            <p style="font-size: 14px; color: #666; line-height: 1.6; height: 70px; overflow: hidden;">
+                Sức đề kháng là "lá chắn" tự nhiên giúp cơ thể chống lại bệnh tật, đặc biệt trong thời điểm giao mùa...
+            </p>
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="#" style="background: #004d00; color: white; padding: 8px 25px; border-radius: 20px; text-decoration: none; font-size: 14px;">Xem thêm</a>
+            </div>
+        </article>
+
+        <article class="news-post">
+            <img src="{% static 'fruit_store/images/news3.jpg' %}" style="width: 100%; border-radius: 10px;" alt="Tin tức">
+            <h3 style="margin: 15px 0; font-size: 18px; color: #333; text-align: center;">Trái Cây Và Sức Khỏe Tim Mạch: Bí Quyết Tự Nhiên</h3>
+            <p style="font-size: 14px; color: #666; line-height: 1.6; height: 70px; overflow: hidden;">
+                Tim là cơ quan quan trọng hàng đầu trong cơ thể, chịu trách nhiệm bơm máu và cung cấp oxy...
+            </p>
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="#" style="background: #004d00; color: white; padding: 8px 25px; border-radius: 20px; text-decoration: none; font-size: 14px;">Xem thêm</a>
+            </div>
+        </article>
+
+    </div>
+    <div class="social-buttons" style="position: fixed; right: 15px; bottom: 80px; display: flex; flex-direction: column; gap: 10px; z-index: 100;">
+    <a href="#"><img src="{% static 'images/zalo-icon.png' %}" width="45"></a>
+    <a href="#"><img src="{% static 'images/messenger-icon.png' %}" width="45"></a>
+</div>
+</main>
+<footer class="main-footer" style="background-color: #004d00; color: white; padding: 40px 5%; margin-top: 50px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+        
+        <div class="footer-info">
+            <h2 style="font-size: 24px; margin-bottom: 20px;">NONG DAN TRAI CAY</h2>
+            <p><strong>Địa chỉ:</strong> XXX , Phường XXX , Quận X, TP. Hồ Chí Minh</p>
+            <p><strong>Điện thoại:</strong> <span style="color: #00bcd4;">0XXX XX XX XXX - 0XXX XX XX XXX</span></p>
+            <p><strong>Email:</strong> ABC123@gmail.com</p>
+            <p><strong>MST:</strong> 0XXXXXXXXXX</p>
+            
+            <div class="footer-social" style="display: flex; gap: 10px; margin-top: 20px;">
+                <img src="{% static 'images/insta-icon.png' %}" width="35">
+                <img src="{% static 'images/tiktok-icon.png' %}" width="35">
+                <img src="{% static 'images/zalo-icon.png' %}" width="35">
+                <img src="{% static 'images/fb-icon.png' %}" width="35">
+            </div>
+        </div>
+
+        <div class="footer-policy">
+            <h3 style="border-bottom: 2px solid white; display: inline-block; padding-bottom: 5px;">QUY ĐỊNH - CHÍNH SÁCH</h3>
+            <ul style="list-style: none; padding: 0; margin-top: 20px; line-height: 2;">
+                <li>» HƯỚNG DẪN ĐẶT HÀNG VÀ THANH TOÁN</li>
+                <li>» CHÍNH SÁCH GIAO HÀNG VÀ ĐỔI TRẢ</li>
+                <li>» CHÍNH SÁCH BẢO MẬT THÔNG TIN</li>
+            </ul>
+            <div style="margin-top: 20px;">
+                <img src="{% static 'images/da-thong-bao.png' %}" width="150" alt="Đã thông báo bộ công thương">
+                <br>
+                <img src="{% static 'images/dmca.png' %}" width="100" style="margin-top: 10px;">
+            </div>
+        </div>
+
+        <div class="footer-fanpage">
+            <h3 style="border-bottom: 2px solid white; display: inline-block; padding-bottom: 5px;">FANPAGE - FACEBOOK</h3>
+            <div style="margin-top: 20px; background: white; padding: 10px; border-radius: 5px;">
+                <img src="{% static 'images/fb-preview.png' %}" style="width: 100%;" alt="Fanpage Facebook">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="copyright" style="background: #222; color: #888; text-align: center; padding: 15px 5%; font-size: 13px; display: flex; justify-content: space-between;">
+    <span>© 2020-2026. Toàn bộ bản quyền thuộc NONG DAN TRAI CAY</span>
+</div>

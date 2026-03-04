@@ -4,12 +4,13 @@
 <header>
     <img src="{% static 'fruit_store/images/logo.png' %}" alt="Logo">
     <nav>
-        <a href="/">Trang chủ</a>
+        <a href="/"style="color: #ff0000;">Trang chủ</a>
         <a href="/gioi-thieu">Giới thiệu</a>
-        <a href="/san-pham">Sản phẩm</a>
+        <a href="{% url 'san_pham' %}">Sản phẩm</a>
         <a href="/tin-tuc">Tin tức</a>
+        <a href="/gio-hang" >Giỏ hàng</a>
     </nav>
-</header>
+    </header>
 
 <section class="banner">
     <img src="/media/banner_tet.jpg" style="width:100%" alt="Tết Bính Ngọ">

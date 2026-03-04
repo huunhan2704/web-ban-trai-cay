@@ -155,3 +155,9 @@ nav a {
 .news-item:hover img {
     transform: scale(1.05);
 }
+/* Khung chứa để căn giữa toàn bộ nội dung */
+.container {
+    max-width: 1200px; /* Độ rộng chuẩn của các web hiện nay */
+    margin: 0 auto;    /* Đây là lệnh quan trọng nhất để căn giữa */
+    padding: 0 15px;   /* Khoảng cách đệm để không bị sát mép màn hình */
+}

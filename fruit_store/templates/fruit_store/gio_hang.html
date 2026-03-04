@@ -1,0 +1,84 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'fruit_store/css/style.css' %}">
+
+<header>
+    <header>
+    <img src="{% static 'fruit_store/images/logo.png' %}" alt="Logo">
+    <nav>
+        <a href="/">Trang chủ</a>
+        <a href="/gioi-thieu">Giới thiệu</a>
+        <a href="{% url 'san_pham' %}">Sản phẩm</a>
+        <a href="/tin-tuc">Tin tức</a>
+    </nav>
+</header>
+    </header>
+
+<main style="padding: 40px 5%;">
+    <h2 style="text-align: center; color: #004d00; text-transform: uppercase;">
+        <span style="color: #ccc;">••</span> GIỎ HÀNG - THANH TOÁN <span style="color: #ccc;">••</span>
+    </h2>
+
+    <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; margin-top: 30px;">
+        
+        <div class="cart-table">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead style="background: #f4f4f4;">
+                    <tr>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Tên Sản Phẩm</th>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Giá Bán</th>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Số Lượng</th>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Tổng Giá</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">
+                            <img src="{% static 'fruit_store/images/nho_den.jpg' %}" width="50" style="vertical-align: middle;">
+                            Nho Đen Không Hạt Sweet
+                        </td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">290.000đ</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">
+                            <input type="number" value="1" style="width: 40px;">
+                        </td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">290.000đ</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 20px; font-weight: bold; font-size: 18px;">
+                Tạm tính: 290.000 đ <br>
+                Tổng thanh toán: 290.000 đ
+            </div>
+            <div style="margin-top: 15px;">
+                <input type="text" placeholder="Mã giảm giá" style="padding: 8px;">
+                <button style="background: red; color: white; border: none; padding: 8px 15px;">Đồng ý</button>
+            </div>
+        </div>
+
+        <div class="checkout-form" style="background: #fff; padding: 20px; border: 1px solid #eee;">
+            <form>
+                <div style="margin-bottom: 15px;">
+                    <label>Họ tên*</label>
+                    <input type="text" style="width: 100%; padding: 10px; border: 1px solid #ddd;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label>Điện thoại*</label>
+                    <input type="text" style="width: 100%; padding: 10px; border: 1px solid #ddd;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label>Địa chỉ*</label>
+                    <textarea style="width: 100%; padding: 10px; border: 1px solid #ddd;"></textarea>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label>Thanh toán</label>
+                    <select style="width: 100%; padding: 10px; border: 1px solid #ddd;">
+                        <option>Thanh toán khi nhận hàng (COD)</option>
+                        <option>Chuyển khoản ngân hàng</option>
+                    </select>
+                </div>
+                <button type="submit" style="width: 100%; background: #004d00; color: white; padding: 15px; border: none; font-weight: bold; cursor: pointer;">
+                    XÁC NHẬN VÀ THANH TOÁN ➜
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
