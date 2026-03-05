@@ -1,0 +1,42 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'fruit_store/css/style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<header>
+    <img src="{% static 'fruit_store/images/logo.png' %}" alt="Logo">
+    <nav style="display: flex; align-items: center; gap: 20px;">
+    <a href="{% url 'home' %}" >Trang chủ</a>
+    <a href="{% url 'gioi_thieu' %}"style="color: #ff0000;">Giới thiệu</a>
+    <a href="{% url 'san_pham' %}">Sản phẩm</a>
+    <a href="{% url 'tin_tuc' %}">Tin tức</a>
+
+    <a href="{% url 'gio_hang' %}" class="cart-icon-container" style="position: relative; text-decoration: none;">
+        <i class="fa-solid fa-cart-shopping" style="font-size: 24px; color: #fff;"></i>
+        <span class="cart-badge">0</span>
+    </a>
+</nav>
+</header>
+
+<main class="container" style="padding: 50px 0;">
+    <div style="display: flex; gap: 40px; align-items: center;">
+        <div style="flex: 1;">
+            <img src="{% static 'fruit_store/images/about_store.jpg' %}" alt="Cửa hàng MP Fruit" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        </div>
+
+        <div style="flex: 1;">
+            <h2 style="color: #006400; text-transform: uppercase;">Về MP Premium Fruit</h2>
+            <p style="line-height: 1.8; color: #333; margin-top: 20px;">
+                Được thành lập từ năm 2014, <strong>MP Premium Fruit</strong> tự hào là đơn vị tiên phong trong việc cung cấp các loại trái cây nhập khẩu cao cấp và đặc sản vùng miền đạt chuẩn Organic, VietGAP.
+            </p>
+            <p style="line-height: 1.8; color: #333;">
+                Chúng tôi cam kết mang đến cho gia đình bạn những sản phẩm tươi ngon nhất, có nguồn gốc xuất xứ rõ ràng và quy trình kiểm tra chất lượng nghiêm ngặt.
+            </p>
+            
+            <h3 style="color: #006400; margin-top: 30px;">Tầm nhìn & Sứ mệnh</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li>✔️ Cung cấp giải pháp quà tặng trái cây sang trọng.</li>
+                <li>✔️ Bảo vệ sức khỏe người tiêu dùng bằng thực phẩm sạch.</li>
+                <li>✔️ Giao hàng tận nơi nhanh chóng trong nội thành.</li>
+            </ul>
+        </div>
+    </div>
+</main>

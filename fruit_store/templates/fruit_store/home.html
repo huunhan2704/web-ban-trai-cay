@@ -1,16 +1,20 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'fruit_store/css/style.css' %}">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <header>
     <img src="{% static 'fruit_store/images/logo.png' %}" alt="Logo">
-    <nav>
-        <a href="/"style="color: #ff0000;">Trang chủ</a>
-        <a href="/gioi-thieu">Giới thiệu</a>
-        <a href="{% url 'san_pham' %}">Sản phẩm</a>
-        <a href="/tin-tuc">Tin tức</a>
-        <a href="/gio-hang" >Giỏ hàng</a>
-    </nav>
-    </header>
+    <nav style="display: flex; align-items: center; gap: 20px;">
+    <a href="{% url 'home' %}"style="color: #ff0000;">Trang chủ</a>
+    <a href="{% url 'gioi_thieu' %}">Giới thiệu</a>
+    <a href="{% url 'san_pham' %}">Sản phẩm</a>
+    <a href="{% url 'tin_tuc' %}">Tin tức</a>
+
+    <a href="{% url 'gio_hang' %}" class="cart-icon-container" style="position: relative; text-decoration: none;">
+        <i class="fa-solid fa-cart-shopping" style="font-size: 24px; color: #fff;"></i>
+        <span class="cart-badge">0</span>
+    </a>
+</nav>
+</header>
 
 <section class="banner">
     <img src="/media/banner_tet.jpg" style="width:100%" alt="Tết Bính Ngọ">

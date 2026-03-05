@@ -27,3 +27,6 @@ def tin_tuc(request):
 def gio_hang(request):
     # Logic lấy sản phẩm từ session (giỏ hàng tạm thời) sẽ viết ở đây
     return render(request, 'fruit_store/gio_hang.html')
+
+def gioi_thieu(request):
+    return render(request, 'fruit_store/gioi_thieu.html')

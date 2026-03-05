@@ -10,6 +10,7 @@ urlpatterns = [
     path('san-pham/', views.san_pham, name='san_pham'),
     path('tin-tuc/', views.tin_tuc, name='tin_tuc'),   
     path('gio-hang/', views.gio_hang, name='gio_hang'),
+    path('gioi-thieu/', views.gioi_thieu, name='gioi_thieu'),
 ] 
 
 # Đoạn này CỰC KỲ QUAN TRỌNG để hiện ảnh từ thư mục media
