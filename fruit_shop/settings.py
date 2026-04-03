@@ -58,13 +58,19 @@ WSGI_APPLICATION = 'fruit_shop.wsgi.application'
 
 
 # Cơ sở dữ liệu (Mặc định dùng SQLite3)
+##DATABASES = {
+  #########}
+# Cấu hình dùng PostgreSQL trên Railway
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'hnMIxCJdbLpszbQRxsDpIoOzWuHlsoaA',
+        'HOST': 'postgres.railway.internal',
+        'PORT': '5432',
     }
 }
-
 
 # Ngôn ngữ và Thời gian
 LANGUAGE_CODE = 'vi-vn' # Đổi sang tiếng Việt cho thân thiện
