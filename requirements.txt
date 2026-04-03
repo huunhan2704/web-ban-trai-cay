@@ -101,11 +101,13 @@ propcache==0.2.1
 proto-plus==1.26.1
 protobuf==6.33.0
 psutil==7.2.2
+psycopg2-binary==2.9.11
 psygnal==0.15.0
 pure_eval==0.2.3
 pyarrow==21.0.0
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
+PyAudio==0.2.13
 pydantic==2.12.5
 pydantic_core==2.41.5
 pydeck==0.9.1
@@ -114,6 +116,7 @@ Pygments==2.19.2
 pyogrio==0.11.1
 pyparsing==3.2.5
 pyperclip==1.11.0
+pypiwin32==223
 pyproj==3.7.2
 pyshp==3.0.2.post1
 PySocks==1.7.1
@@ -121,7 +124,9 @@ pystac==1.14.3
 pystac-client==0.9.0
 python-box==7.3.2
 python-dateutil==2.9.0.post0
+pyttsx3==2.90
 pytz==2025.2
+pywin32==306
 pyzmq==27.1.0
 rasterio==1.4.3
 ratelim==0.1.6
@@ -135,6 +140,7 @@ shapely==2.1.2
 six==1.17.0
 smmap==5.0.2
 soupsieve==2.8.3
+SpeechRecognition==3.10.0
 sqlparse==0.5.5
 stack-data==0.6.3
 streamlit==1.51.0
@@ -156,5 +162,6 @@ whitebox==2.3.6
 whiteboxgui==2.3.0
 whitenoise==6.12.0
 widgetsnbextension==4.0.15
+windows-curses==2.4.1
 xyzservices==2025.10.0
 yarl==1.18.3
