@@ -25,3 +25,11 @@ class Order(models.Model):
     total_amount = models.DecimalField(max_digits=10, decimal_places=0) # [cite: 62]
     status = models.CharField(max_length=50, default='Chờ xác nhận') # [cite: 63]
     created_at = models.DateTimeField(auto_now_add=True) # [cite: 64]
+    
+class Banner(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='banners/')
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
