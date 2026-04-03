@@ -33,3 +33,13 @@ class Banner(models.Model):
 
     def __str__(self):
         return self.title
+    
+class News(models.Model):
+    title = models.CharField(max_length=200, verbose_name="Tiêu đề")
+    summary = models.TextField(verbose_name="Tóm tắt ngắn")
+    content = models.TextField(verbose_name="Nội dung bài viết")
+    image = models.ImageField(upload_to='news/', verbose_name="Ảnh bài viết")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
