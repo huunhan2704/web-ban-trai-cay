@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 from fruit_store import views # Import tất cả views
@@ -11,6 +11,7 @@ urlpatterns = [
     path('tin-tuc/', views.tin_tuc, name='tin_tuc'),   
     path('gio-hang/', views.gio_hang, name='gio_hang'),
     path('gioi-thieu/', views.gioi_thieu, name='gioi_thieu'),
+    path('my-admin/', include('dashboard.urls')),
 ] 
 
 # Đoạn này CỰC KỲ QUAN TRỌNG để hiện ảnh từ thư mục media

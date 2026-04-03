@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-between">
+        <h2>Danh sách Trái cây</h2>
+        <a href="{% url 'product_add' %}" class="btn btn-success">+ Thêm sản phẩm</a>
+    </div>
+    <table class="table table-bordered mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Ảnh</th>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in products %}
+            <tr>
+                <td><img src="{{ p.image.url }}" width="60"></td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.price }}đ</td>
+                <td>
+                    <a href="#" class="btn btn-sm btn-warning">Sửa</a>
+                    <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fruit_store', # App của bạn
+    'dashboard',
 ]
 
 MIDDLEWARE = [
