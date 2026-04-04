@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from fruit_store.models import Product
 from .forms import ProductForm
 
@@ -47,3 +47,11 @@ def news_list(request):
 def news_add(request):
     # Logic tương tự như product_add nhưng dùng NewsForm
     pass
+
+from fruit_store.models import Category # Nhớ import model Category
+
+def category_list(request):
+    categories = Category.objects.all()
+    return render(request, 'dashboard/category_list.html', {'categories': categories})
+
+# Bạn có thể viết thêm hàm category_add tương tự như product_add
