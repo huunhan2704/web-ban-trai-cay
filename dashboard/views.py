@@ -55,3 +55,22 @@ def category_list(request):
     return render(request, 'dashboard/category_list.html', {'categories': categories})
 
 # Bạn có thể viết thêm hàm category_add tương tự như product_add
+
+from fruit_store.models import Category
+from .forms import CategoryForm
+
+# 1. Trang danh sách danh mục
+def category_list(request):
+    categories = Category.objects.all()
+    return render(request, 'dashboard/category_list.html', {'categories': categories})
+
+# 2. Trang thêm danh mục mới
+def category_add(request):
+    if request.method == "POST":
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('category_list')
+    else:
+        form = CategoryForm()
+    return render(request, 'dashboard/category_form.html', {'form': form})
